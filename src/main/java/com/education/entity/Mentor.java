@@ -5,42 +5,51 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Version;
 
 @Entity
 @Table(name = "mentors")
 public class Mentor {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String expertise;
+    @Version
+    private Long version;
 
-    public Mentor() {}
-    public Mentor(String name, String expertise) {
+    private Mentor() {} // Приватный конструктор для билдера
 
-        this.name = name;
-        this.expertise = expertise;
+    public Long getId() { return id; }
+    public String getName() { return name; }
+    public String getExpertise() { return expertise; }
+    public Long getVersion() { return version; }
+
+    // Статический внутренний класс Builder
+    public static class MentorBuilder {
+        private String name;
+        private String expertise;
+
+        public MentorBuilder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public MentorBuilder setExpertise(String expertise) {
+            this.expertise = expertise;
+            return this;
+        }
+
+        public Mentor build() {
+            Mentor mentor = new Mentor();
+            mentor.name = this.name;
+            mentor.expertise = this.expertise;
+            return mentor;
+        }
     }
 
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getExpertise() {
-        return expertise;
-    }
-    public void setExpertise(String expertise) {
-        this.expertise = expertise;
+    @Override
+    public String toString() {
+        return "Mentor{id=" + id + ", name='" + name + "', expertise='" + expertise + "', version=" + version + "}";
     }
 }

@@ -16,45 +16,49 @@ public class User {
     private String password;
     private int points;
 
-    public User() {}
-    public User(String username, String password) {
+    private User() {}
 
-        this.username = username;
-        this.password = password;
-        this.points = 0;
+    public static class UserBuilder {
+        private String username;
+        private String password;
+        private int points = 0;
+
+        public UserBuilder setUsername(String username) {
+            this.username = username;
+            return this;
+        }
+
+        public UserBuilder setPassword(String password) {
+            this.password = password;
+            return this;
+        }
+
+        public UserBuilder setPoints(int points) {
+            this.points = points;
+            return this;
+        }
+
+        public User build() {
+            User user = new User();
+            user.username = this.username;
+            user.password = this.password;
+            user.points = this.points;
+            return user;
+        }
     }
 
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public int getPoints() {
-        return points;
-    }
-    public void setPoints(int points) {
-        this.points = points;
-    }
+    // Геттеры и сеттеры
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+    public String getUsername() { return username; }
+    public void setUsername(String username) { this.username = username; }
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
+    public int getPoints() { return points; }
+    public void setPoints(int points) { this.points = points; }
 
     @Override
     public String toString() {
-
         return "User{id=" + id + ", username='" + username + "', password='" + password + "', points=" + points + "}";
     }
 }

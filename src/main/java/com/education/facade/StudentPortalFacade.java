@@ -6,9 +6,9 @@ import com.education.entity.User;
 import com.education.service.EducationService;
 
 import java.util.Map;
+import java.util.Scanner;
 
 public class StudentPortalFacade {
-
     private final EducationService educationService;
 
     public StudentPortalFacade() {
@@ -23,19 +23,19 @@ public class StudentPortalFacade {
         return educationService.loginUser(username, password);
     }
 
-    public Course enrollInCourse(User user, String courseName, boolean withCertificate, boolean withMentor, boolean withGamification) {
-        return educationService.enrollUser(user, courseName, withCertificate, withMentor, withGamification);
+    public void enrollUser(User user, String courseName, boolean withCertificate, boolean withMentor, boolean withGamification) {
+        educationService.enrollUser(user, courseName, withCertificate, withMentor, withGamification);
     }
 
     public void selectMentor(User user, Long mentorId, Enrollment enrollment) {
         educationService.selectMentor(user, mentorId, enrollment);
     }
 
-    public void startLearning(User user, Enrollment enrollment) {
-        educationService.startLearning(user, enrollment);
+    public void startLearning(User user, Enrollment enrollment, Scanner scanner) {
+        educationService.startLearning(user, enrollment, scanner);
     }
 
-    public String viewLeaderboard() {
+    public String getLeaderboard() {
         return educationService.getLeaderboard();
     }
 
