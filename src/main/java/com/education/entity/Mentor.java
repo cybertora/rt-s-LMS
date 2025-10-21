@@ -20,10 +20,19 @@ public class Mentor {
 
     private Mentor() {}
 
-    public Long getId() { return id; }
-    public String getName() { return name; }
-    public String getExpertise() { return expertise; }
-    public Long getVersion() { return version; }
+    public Long getId() {
+        return id;
+    }
+    public String getName() {
+        return name;
+    }
+
+    public String getExpertise() {
+        return expertise;
+    }
+    public Long getVersion() {
+        return version;
+    }
 
 
     public static class MentorBuilder {
