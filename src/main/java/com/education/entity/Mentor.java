@@ -18,14 +18,14 @@ public class Mentor {
     @Version
     private Long version;
 
-    private Mentor() {} // Приватный конструктор для билдера
+    private Mentor() {}
 
     public Long getId() { return id; }
     public String getName() { return name; }
     public String getExpertise() { return expertise; }
     public Long getVersion() { return version; }
 
-    // Статический внутренний класс Builder
+
     public static class MentorBuilder {
         private String name;
         private String expertise;

@@ -34,22 +34,67 @@ public class Enrollment {
         this.progress = progress;
     }
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-    public User getUser() { return user; }
-    public void setUser(User user) { this.user = user; }
-    public String getCourseName() { return courseName; }
-    public void setCourseName(String courseName) { this.courseName = courseName; }
-    public int getProgress() { return progress; }
-    public void setProgress(int progress) { this.progress = progress; }
-    public Mentor getMentor() { return mentor; }
-    public void setMentor(Mentor mentor) { this.mentor = mentor; }
-    public Course getDecoratedCourse() { return decoratedCourse; }
-    public void setDecoratedCourse(Course decoratedCourse) { this.decoratedCourse = decoratedCourse; }
-    public boolean isWithCertificate() { return withCertificate; }
-    public void setWithCertificate(boolean withCertificate) { this.withCertificate = withCertificate; }
-    public boolean isWithMentor() { return withMentor; }
-    public void setWithMentor(boolean withMentor) { this.withMentor = withMentor; }
-    public boolean isWithGamification() { return withGamification; }
-    public void setWithGamification(boolean withGamification) { this.withGamification = withGamification; }
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+    public void setUser(User user) {
+        this.user = user;
+
+    }
+    public String getCourseName() {
+        return courseName;
+    }
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public int getProgress() {
+        return progress;
+    }
+    public void setProgress(int progress) {
+        this.progress = progress;
+    }
+
+    public Mentor getMentor() {
+        return mentor;
+    }
+    public void setMentor(Mentor mentor) {
+        this.mentor = mentor;
+    }
+
+    public Course getDecoratedCourse() {
+        return decoratedCourse;
+    }
+    public void setDecoratedCourse(Course decoratedCourse) {
+        this.decoratedCourse = decoratedCourse;
+    }
+
+    public boolean isWithCertificate() {
+        return withCertificate;
+    }
+    public void setWithCertificate(boolean withCertificate) {
+        this.withCertificate = withCertificate;
+    }
+
+    public boolean isWithMentor() {
+        return withMentor;
+    }
+    public void setWithMentor(boolean withMentor) {
+        this.withMentor = withMentor;
+    }
+
+    public boolean isWithGamification() {
+        return withGamification;
+    }
+    public void setWithGamification(boolean withGamification) {
+        this.withGamification = withGamification;
+    }
+
 }
